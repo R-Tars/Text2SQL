@@ -1,0 +1,12 @@
+from __future__ import annotations
+
+import re
+
+
+_SPACE_RE = re.compile(r"\s+")
+
+
+def normalize_question(text: str) -> str:
+    cleaned = text.strip()
+    cleaned = _SPACE_RE.sub(" ", cleaned)
+    return cleaned
